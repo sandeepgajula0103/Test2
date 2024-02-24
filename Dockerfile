@@ -1,5 +1,4 @@
-FROM ubuntu:20.04
-
-RUN apt update && apt install -y sbcl
-
-WORKDIR /usr/src
+FROM nginx
+RUN rm /etc/nginx/nginx.conf /etc/nginx/conf.d/default.conf
+COPY content /usr/share/nginx/html
+COPY conf /etc/nginx
